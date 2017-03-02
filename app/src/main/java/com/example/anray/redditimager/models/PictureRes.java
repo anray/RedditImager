@@ -14,15 +14,25 @@ public class PictureRes {
     @SerializedName("kind")
     @Expose
     public String kind;
+
     @SerializedName("data")
     @Expose
     public Data data;
 
-    class Data {
+    public Data getData() {
+        return data;
+    }
+
+    public class Data {
+
+        public List<Child> getChildren() {
+            return children;
+        }
 
         @SerializedName("modhash")
         @Expose
         public String modhash;
+
         @SerializedName("children")
         @Expose
         public List<Child> children = null;
@@ -33,7 +43,7 @@ public class PictureRes {
         @Expose
         public Object before;
 
-        class Child {
+        public class Child {
 
             @SerializedName("kind")
             @Expose
@@ -42,7 +52,11 @@ public class PictureRes {
             @Expose
             public Data_ data;
 
-            class Data_ {
+            public Data_ getData() {
+                return data;
+            }
+
+            public class Data_ {
 
                 @SerializedName("contest_mode")
                 @Expose
@@ -213,13 +227,21 @@ public class PictureRes {
                 @Expose
                 public Integer ups;
 
-                class MediaEmbed {
+                public String getThumbnail() {
+                    return thumbnail;
+                }
+
+                public String getPostHint() {
+                    return postHint;
+                }
+
+                public class MediaEmbed {
                 }
 
                 public class SecureMediaEmbed {
                 }
 
-                class Preview {
+                public class Preview {
 
                     @SerializedName("images")
                     @Expose
@@ -228,7 +250,7 @@ public class PictureRes {
                     @Expose
                     public Boolean enabled;
 
-                    class Image {
+                    public class Image {
 
                         @SerializedName("source")
                         @Expose
@@ -243,7 +265,7 @@ public class PictureRes {
                         @Expose
                         public String id;
 
-                        class Source {
+                        public class Source {
 
                             @SerializedName("url")
                             @Expose
@@ -257,7 +279,7 @@ public class PictureRes {
 
                         }
 
-                        class Resolution {
+                        public class Resolution {
 
                             @SerializedName("url")
                             @Expose
@@ -271,7 +293,7 @@ public class PictureRes {
 
                         }
 
-                        class Variants {
+                        public class Variants {
                         }
 
                     }

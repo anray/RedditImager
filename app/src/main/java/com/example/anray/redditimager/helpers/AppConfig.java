@@ -7,6 +7,6 @@ public class AppConfig {
     public static final int MAX_CONNECT_TIMEOUT = 3000;
     public static final int MAX_READ_TIMEOUT = 3000;
     public static final String TAG_PREFIX = "DEV ";
-    public static String BASE_URL = "https://www.reddit.com/r/EarthPorn/top/.json?limit=100";
+    public static String BASE_URL = "https://www.reddit.com/";
 
 }
