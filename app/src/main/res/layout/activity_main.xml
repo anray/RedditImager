@@ -8,6 +8,8 @@
     tools:context="com.example.anray.redditimager.ui.MainActivity">
 
     <android.support.v7.widget.RecyclerView
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
         tools:listitem="@layout/item_picture_list"
         android:id="@+id/rv"
         android:layout_width="match_parent"

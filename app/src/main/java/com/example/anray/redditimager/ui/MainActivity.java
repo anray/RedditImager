@@ -78,8 +78,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                     getPictureUrls(response);
 
-                    mPicturesAdapter = new PicturesAdapter(mPictureUrlsList);
-                    mRecyclerView.setAdapter(mPicturesAdapter);
+                    if (mPicturesAdapter == null) {
+                        mPicturesAdapter = new PicturesAdapter(mPictureUrlsList);
+                        mRecyclerView.setAdapter(mPicturesAdapter);
+                    } else {
+                        mPicturesAdapter.changePictureSet(mPictureUrlsList);
+//                        mRecyclerView.swapAdapter(mPicturesAdapter, false);
+                    }
 
 
                 }
@@ -93,6 +98,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void getPictureUrls(Response<PictureRes> response) {
+        mPictureUrlsList.clear();
+
         List<PictureRes.Data.Child> children = response.body().getData().getChildren();
 
         Iterator itr = children.iterator();

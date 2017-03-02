@@ -65,6 +65,11 @@ public class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.Pictur
         return mPictures.size();
     }
 
+    public void changePictureSet(List<String> pictureUrlsList) {
+        mPictures = pictureUrlsList;
+        notifyDataSetChanged();
+    }
+
     class PictureViewHolder extends RecyclerView.ViewHolder {
 
         protected ImageView mPicture;
