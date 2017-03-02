@@ -108,7 +108,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             PictureRes.Data.Child child = ((PictureRes.Data.Child) itr.next());
 
             String filterValue = child.getData().getPostHint();
-            if (filterValue.equals(FILTER)) {
+            if (filterValue != null && filterValue.equals(FILTER)) {
                 mPictureUrlsList.add(child.getData().getThumbnail());
             }
 
