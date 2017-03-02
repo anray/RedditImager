@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RedditImager</string>
+    <string name="new_label">New</string>
+    <string name="top_label">Top</string>
 </resources>
