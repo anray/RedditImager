@@ -44,7 +44,22 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mNew.setOnClickListener(this);
         mTop.setOnClickListener(this);
 
-        mMGridLayoutManager = new GridLayoutManager(this, 1);
+        mMGridLayoutManager = new GridLayoutManager(this, 2);
+        mMGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+
+                int res = position % 3;
+
+                switch (res) {
+                    case 0:
+                        return 2;
+                    default:
+                        return 1;
+                }
+
+            }
+        });
         mRecyclerView.setLayoutManager(mMGridLayoutManager);
 
         mDataManager = DataManager.getInstance();
@@ -96,7 +111,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.new_btn:
                 changePicturesSource(mUrlNew);
                 break;
