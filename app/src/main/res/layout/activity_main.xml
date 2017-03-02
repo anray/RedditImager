@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.anray.redditimager.MainActivity">
+    tools:context="com.example.anray.redditimager.ui.MainActivity">
 
     <android.support.v7.widget.RecyclerView
         tools:listitem="@layout/item_picture_list"
